@@ -1,0 +1,33 @@
+<form (ngSubmit)="registrarCursos()">
+  <label>NombreCurso:</label>
+  <input [(ngModel)]="nombreCurso" name="nombreCurso" type="text" placeholder="Ingrese el nombre del curso" />
+
+  <label>Instructor:</label>
+  <input [(ngModel)]="instructor" name="instructor" type="text" placeholder="Ingrese el instructor del curso" />
+
+  <label>Duración:</label>
+  <input [(ngModel)]="duracion" name="duracion" type="number" placeholder="Ingrese la duración del curso" />
+
+  <label>Jornada:</label>
+  <input [(ngModel)]="jornada" name="jornada" type="text" placeholder="Ingrese la jornada del curso" />
+
+  <button type = "submit">Registrar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre curso</th>
+      <th>Instructor</th>
+      <th>Duración</th>
+      <th>Jornada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of cursos">
+      <td>{{ curso.nombre }}</td>
+      <td>{{ curso.instructor }}</td>
+      <td>{{ curso.duracion }}</td>
+      <td>{{ curso.jornada }}</td>
+    </tr>
+  </tbody>

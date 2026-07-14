@@ -1,0 +1,33 @@
+<form (ngSubmit)="registrarEstudiante()">
+  <label>Nombre:</label>
+  <input [(ngModel)]="nombreEstudiante" name="nombreEstudiante" type="text" placeholder="Ingrese el nombre del estudiante" />
+
+  <label>Apellido:</label>
+  <input [(ngModel)]="apellidoEstudiante" name="apellidoEstudiante" type="text" placeholder="Ingrese el apellido del estudiante" />
+
+  <label>Edad:</label>
+  <input [(ngModel)]="edadEstudiante" name="edadEstudiante" type="number" placeholder="Ingrese la edad del estudiante" />
+
+  <label>Programa:</label>
+  <input [(ngModel)]="programaEstudiante" name="programaEstudiante" type="text" placeholder="Ingrese el programa del estudiante" />
+
+  <button type = "submit">Registrar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Programa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let estudiante of estudiantes">
+      <td>{{ estudiante.nombre }}</td>
+      <td>{{ estudiante.apellido }}</td>
+      <td>{{ estudiante.edad }}</td>
+      <td>{{ estudiante.programa }}</td>
+    </tr>
+  </tbody>

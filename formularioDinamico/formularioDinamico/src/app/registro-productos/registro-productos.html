@@ -1,0 +1,33 @@
+<form (ngSubmit)="registrarProductos()">
+  <label>NombreProducto:</label>
+  <input [(ngModel)]="nombreProducto" name="nombreProducto" type="text" placeholder="Ingrese el nombre del producto" />
+
+  <label>Categoria:</label>
+  <input [(ngModel)]="categoriaProducto" name="categoriaProducto" type="text" placeholder="Ingrese la categoria del producto" />
+
+  <label>Precio:</label>
+  <input [(ngModel)]="precioProducto" name="precioProducto" type="number" placeholder="Ingrese el precio del producto" />
+
+  <label>Cantidad:</label>
+  <input [(ngModel)]="cantidadProducto" name="cantidadProducto" type="number" placeholder="Ingrese la cantidad del producto" />
+
+  <button type = "submit">Registrar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>NombreProducto</th>
+      <th>Categoria</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.categoria }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>{{ producto.cantidad }}</td>
+    </tr>
+  </tbody>
